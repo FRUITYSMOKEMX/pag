@@ -1,0 +1,133 @@
+body {
+    font-family: Arial, sans-serif; /* Define la fuente principal */
+    margin: 0; /* Elimina los márgenes externos */
+    padding: 0; /* Elimina el relleno interno */
+    background-image: url('fondo1.jpg'); /* Establece la imagen de fondo */
+    background-size: cover; /* Hace que la imagen cubra todo el fondo */
+    background-position: center; /* Centra la imagen de fondo */
+    background-attachment: fixed; /* Fija la imagen de fondo al desplazarse */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+}
+
+header {
+    -webkit-backdrop-filter: blur(10px); /* Compatibilidad con Safari */
+    color: #fff; /* Color del texto blanco */
+    text-align: center; /* Centra el texto horizontalmente */
+    position: relative; /* Posición relativa para el encabezado */
+    margin: 0 auto; /* Centra el encabezado horizontalmente */
+    font-size: 20px; /* Tamaño de letra (ajustado a 20px como indicaste) */
+    padding: 20px 0; /* Relleno superior e inferior para espaciar el texto */
+    width: 100%; /* Ocupa todo el ancho para centrarlo correctamente */
+    text-shadow: 0 0 5px #fff, 0 0 10px #000, 0 0 8px #00ffcc; /* Efecto neón sutil con brillo blanco y un toque de cian */
+}
+
+header nav a {
+    color: #fff; /* Color del texto de los enlaces blanco */
+    text-decoration: none; /* Elimina la decoración de los enlaces */
+    margin: 0 10px; /* Margen a los lados de los enlaces */
+}
+
+main {
+    display: flex; /* Usa un diseño flexible */
+    padding: 20px; /* Relleno interno */
+}
+
+.filters {
+    width: 25%; /* Ancho del 25% del contenedor */
+    background-color: #fff; /* Fondo blanco */
+    padding: 20px; /* Relleno interno */
+    margin-right: 20px; /* Margen a la derecha */
+    border-radius: 5px; /* Bordes redondeados */
+}
+
+.filter-section {
+    margin-bottom: 20px; /* Margen inferior */
+}
+
+.filter-section h4 {
+    margin-top: 0; /* Elimina el margen superior */
+}
+
+.filters input[type="checkbox"] {
+    margin-right: 5px; /* Margen a la derecha de las casillas */
+}
+
+.filters input[type="range"] {
+    width: 100%; /* Ancho completo */
+}
+
+.catalog {
+    width: 75%; /* Ancho del 75% del contenedor */
+    display: grid; /* Usa un diseño de cuadrícula */
+    grid-template-columns: repeat(3, 1fr); /* Establece 3 columnas por fila */
+    gap: 30px; /* Espacio entre los elementos de la cuadrícula */
+    justify-content: center; /* Centra los elementos horizontalmente */
+    max-width: 1200px; /* Limita el ancho máximo para equilibrio estético */
+    margin: 0 auto; /* Centra el contenedor de la cuadrícula */
+    padding: 0 10px; /* Añade relleno a los lados para evitar que toque los bordes */
+}
+
+.product {
+    background-color: rgba(0, 0, 0, 0.3); /* Fondo semi-transparente negro */
+    padding: 10px; /* Relleno interno */
+    border-radius: 20px; /* Bordes redondeados */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Sombra ligera */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave al pasar el ratón */
+    color: #fff; /* Color del texto blanco */
+    border: 1.5px solid #FFFFFF; /* Borde blanco */
+    backdrop-filter: blur(10px); /* Efecto de desenfoque al estilo iOS/macOS */
+    -webkit-backdrop-filter: blur(10px); /* Compatibilidad con Safari */
+    display: flex; /* Usa flexbox para el diseño */
+    align-items: center; /* Centra el contenido verticalmente */
+    height: 150px; /* Mantiene la altura original (ajustar si es necesario) */
+    
+}
+
+.product img {
+    max-width: 50%; /* La imagen ocupa la mitad del ancho */
+    height: auto; /* Mantiene la proporción de la imagen */
+    margin-right: 0px; /* Espacio entre la imagen y el texto */
+}
+
+.product p {
+    margin: 5px 0; /* Margen vertical para los párrafos */
+    flex: 1; /* El texto ocupa el espacio restante */
+    text-align: left; /* Alinea el texto a la izquierda */
+}
+
+.product:hover {
+    transform: translateY(-13px); /* Eleva el cuadro al pasar el ratón */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2); /* Aumenta la sombra al pasar el ratón */
+}
+
+.product-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+}
+
+.product-text h4 {
+    margin: 0 0 8px 0;
+    font-size: 16px;
+}
+
+.product-text ul {
+    list-style: disc;
+    padding-left: 20px;
+    margin: 0;
+}
+
+
+@media (max-width: 768px) {
+    main {
+        flex-direction: column; /* Apila los elementos en columna en móviles */
+    }
+    .filters, .catalog {
+        width: 100%; /* Ancho completo en móviles */
+    }
+    .catalog {
+        max-width: 100%; /* Asegura ancho completo en móviles */
+        grid-template-columns: repeat(1, 1fr); /* Una columna por fila en móviles */
+    }
+}
